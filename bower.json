@@ -1,0 +1,24 @@
+{
+  "name": "clean_gulp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sergey <sera.prokop@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sera-prokop/First-project",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.12.0",
+    "normalize.css": "*",
+    "jquery-placeholder": "*",
+    "modernizr": "2.8.*"
+  }
+}
