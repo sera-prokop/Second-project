@@ -104,6 +104,7 @@ gulp.task('html_test:build', function () {
     .pipe(plumber())
     .pipe(jade({
       locals: YOUR_LOCALS,
+      inline: false,
       pretty: true
     }))
     .pipe(gulp.dest(path.test.html))

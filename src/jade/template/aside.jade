@@ -1,0 +1,81 @@
+aside.aside
+  form.aside-form
+
+
+    .shop
+      h3.shop-title Наличие в магазинах
+      -
+        var shopItem = [
+          ['Во всех магазинах', 'all-shop'],
+          ['В ближайшем ко мне магазине', 'my-shop']
+        ]
+      each item in shopItem
+        input(type="radio" id="#{item[1]}")
+        label(for="#{item[1]}").shop__label= item[0]
+
+
+    .brends
+      h3.brends-title Бренды
+      -
+        var brendsItem = [
+          ['Lenovo', 'lenovo'],
+          ['Apple', 'apple'],
+          ['Samsung', 'samsung'],
+          ['Asus', 'asus'],
+          ['Motorola', 'motorola']
+        ]
+      each item in brendsItem
+        input(type="checkbox" id="#{item[1]}")
+        label(for="#{item[1]}").brends__label= item[0]
+      a(href="#").brends__link Сбросить фильтр
+
+
+    .cost
+      h3.cost__table Цена
+      .cost__box
+        span от
+        input(type="text")
+        span до
+        input(type="text")
+        .cost__line
+
+
+    .color
+      h3.color__title Цвет
+      -
+        var colorItem = [
+          ['#', 'white', 'Белый'],
+          ['#', 'gray', 'Серый'],
+          ['#', 'black', 'Черный'],
+          ['#', 'd-blue', 'Синий'],
+          ['#', 'red', 'Красный'],
+          ['#', 'yellow', 'Желтый'],
+          ['#', 'biscuit', 'Св.коричн.'],
+          ['#', 'green', 'Зеленый'],
+          ['#', 'blue', 'Синий'],
+          ['#', 'purple', 'Фиолетовый'],
+          ['#', 'pink', 'Розовый'],
+          ['#', 'brown', 'Коричневый']
+        ]
+      ul.color__list
+        each item in colorItem
+          li.color__item
+            a(href='#{item[0]}' class='color__link--#{item[1]}').color__link= item[2]
+
+
+    .os
+      h3.os__title Операционные системы
+      -
+        var osItem = [
+          ['Android', 'android'],
+          ['iOs', 'ios'],
+          ['Windows Mobile', 'win-mob'],
+          ['Symbian', 'symbian'],
+          ['Custom', 'custom']
+        ]
+      each item in osItem
+        input(type="checkbox" id="#{item[1]}")
+        label(for="#{item[1]}").os__label= item[0]
+      a(href="#").os__link Сбросить фильтр
+
+

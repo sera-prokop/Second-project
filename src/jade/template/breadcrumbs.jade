@@ -1,0 +1,7 @@
+.breadcrumbs
+  - var breadcrumbsItem = ['Главная', 'Каталог']
+  ul.breadcrumbs__list
+    each item, ndx in breadcrumbsItem
+      li.breadcrumbs__item= item
+          a.breadcrumbs__link(class="#{ndx === breadcrumbsItem.length - 1 ? 'breadcrumbs__link--active' : ''}")
+          span= ndx
