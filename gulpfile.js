@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     plumber = require('gulp-plumber'),
     browserSync = require("browser-sync"),
+    jade = require('gulp-jade'),
     reload = browserSync.reload;
 
 var path = {
@@ -30,14 +31,16 @@ var path = {
       style: 'src/style/style.scss',
       ie8: 'src/style/ie8.scss',
       img: 'src/images/img/*.*',
-      fonts: 'src/fonts/**/*.*'
+      fonts: 'src/fonts/**/*.*',
+      jade: 'src/jade/*.jade'
     },
     watch: {
       html: 'src/**/*.html',
       js: 'src/js/**/*.js',
       style: 'src/style/**/*.scss',
       img: 'src/images/img/*.*',
-      fonts: 'src/fonts/**/*.*'
+      fonts: 'src/fonts/**/*.*',
+      jade: 'src/jade/**/*.jade'
     },
     test: {
       html: 'test/',
@@ -86,15 +89,23 @@ gulp.task('clean_test', function (cb) {
 });
 
 gulp.task('html:build', function () {
-  gulp.src(path.src.html)
-    .pipe(rigger())
-    .pipe(gulp.dest(path.build.html))
+  var YOUR_LOCALS = {};
+  gulp.src(path.src.jade)
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest(path.test.html))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('html_test:build', function () {
-  gulp.src(path.src.html)
-    .pipe(rigger())
+    var YOUR_LOCALS = {};
+    gulp.src(path.src.jade)
+    .pipe(plumber())
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
     .pipe(gulp.dest(path.test.html))
     .pipe(reload({stream: true}));
 });
@@ -243,7 +254,7 @@ gulp.task('test', [
 
 
 gulp.task('watch', function(){
-  watch([path.watch.html], function(event, cb) {
+  watch([path.watch.jade], function(event, cb) {
     gulp.start('html:build');
     });
   watch([path.watch.style], function(event, cb) {
@@ -263,7 +274,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('watch_test', function(){
-  watch([path.watch.html], function(event, cb) {
+  watch([path.watch.jade], function(event, cb) {
     gulp.start('html_test:build');
     });
   watch([path.watch.style], function(event, cb) {

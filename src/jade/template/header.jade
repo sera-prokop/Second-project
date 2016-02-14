@@ -1,0 +1,8 @@
+header.header
+  div.social
+    ul.social__list
+      -var Item = {'Facebook' : 'fb', 'Вконтакте' : 'vk', 'Twitter' : 'tw'};
+      -var sItem = ['www', 'sfsfdsf', 'sdfsdf'];
+        each val, key in Item
+          li.social__item
+            a(href="#{df}" class="social__link--#{val}").social__link= key
