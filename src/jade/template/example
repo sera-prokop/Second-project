@@ -1,0 +1,12 @@
+- for(var i = 0; i < 2; i++)
+  .product
+    -
+      var product = {
+        'block-left' : {'img' : {'dk': 'slkdfjsldf'}, 'min-img' : '', 'vendor' : ''},
+        'block-center' : {'title' : '', 'description' : '', 'rating' : ''},
+        'block-right' : {'price' : '', 'recycler' : '', 'avial' : ''}
+      }
+    each value, key in product
+      div(class="product__#{key}")
+        each value1, key1 in value
+          div(class="product__#{key1}")=value1.dk

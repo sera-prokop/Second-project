@@ -1,0 +1,47 @@
+.sorting
+  form(action="#" method="post").sorting-sel
+    span.sorting-sel__by Сортировать по
+    select.sorting-sel__sel
+      - var sortSelect = ['по цене', 'по популярности'];
+      each item in sortSelect
+        option.sorting-sel__option= item
+
+
+.view
+  span.view__descr Вид каталога
+  -var view = ['min', 'middle', 'norm']
+  each item in view
+    .view__switch(class=".view__switch--#{item}")
+
+
+
+
+
+- var oneKee = [['l'], ['s']]
+- for(var i = 0; i < 2; i++)
+  .product
+    .product__block-left.block-left
+      .block-left__img #{oneKee[i]}
+      .block-left__min-img
+      .block-left__vendor
+    .product__block-center
+      .block-center__title
+      .block-center__description
+      .block-center__rating
+    .product__block-right
+      .block-right__price
+      .block-right__recycler
+      .block-right__avial
+
+- for(var i = 0; i < 2; i++)
+  .product
+    -
+      var product = {
+        'block-left' : {'img' : [[1], [2]], 'min-img' :  [[7], [8]], 'vendor' : [[13], [14]]},
+        'block-center' : {'title' : [[3], [4]], 'description' : [[9], [10]], 'rating' : [[15], [16]]},
+        'block-right' : {'price' : [[5], [6]], 'recycler' : [[11], [12]], 'avial' : [[17], [18]]}
+      }
+    each value, key in product
+      div(class="product__#{key}")
+        each value1, key1 in value
+          div(class="product__#{key1}") #{value1[i]}
