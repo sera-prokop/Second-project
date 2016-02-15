@@ -1,12 +1,23 @@
+
+
 - for(var i = 0; i < 2; i++)
   .product
     -
       var product = {
-        'block-left' : {'img' : {'dk': 'slkdfjsldf'}, 'min-img' : '', 'vendor' : ''},
-        'block-center' : {'title' : '', 'description' : '', 'rating' : ''},
-        'block-right' : {'price' : '', 'recycler' : '', 'avial' : ''}
+        'block-left' : {
+            'img' : [[], [], [], [], [], [], [], [], []],
+            'min-img' :  [[], [], [], [], [], [], [], [], []],
+            'vendor' : [[], [], [], [], [], [], [], [], []]},
+        'block-center' : {
+            'title' : [[Samsung GT-I9301I GALAXY S 3 ], [Microsoft Lumia 640 RM-1077 ], [], [], [], [], [], [], []],
+            'description' : [[9], [10], [], [], [], [], [], [], []],
+            'rating' : [[15], [16], [], [], [], [], [], [], []]},
+        'block-right' : {
+            'price' : [[5], [6], [], [], [], [], [], [], []],
+            'recycler' : [[11], [12], [], [], [], [], [], [], []],
+            'avial' : [[17], [18], [], [], [], [], [], [], []]}
       }
     each value, key in product
       div(class="product__#{key}")
         each value1, key1 in value
-          div(class="product__#{key1}")=value1.dk
+          div(class="product__#{key1}") #{value1[i]}
