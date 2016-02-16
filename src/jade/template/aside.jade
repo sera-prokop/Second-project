@@ -1,6 +1,13 @@
 aside.aside
   form.aside-form
 
+    .tel
+      -
+        var tel = [
+          ['flagmans', 'Флагманы'],
+          ['budget', 'Бюджетная линейка']]
+      each item in tel
+        button(class="tel__#{item[0]}")= item[1]
 
     .shop
       h3.shop-title Наличие в магазинах
