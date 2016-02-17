@@ -1,0 +1,166 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$fb-h-name: 'fb-h';
+$fb-h-x: 0px;
+$fb-h-y: 36px;
+$fb-h-offset-x: 0px;
+$fb-h-offset-y: -36px;
+$fb-h-width: 26px;
+$fb-h-height: 26px;
+$fb-h-total-width: 100px;
+$fb-h-total-height: 88px;
+$fb-h-image: '../images/sprite.png';
+$fb-h: (0px, 36px, 0px, -36px, 26px, 26px, 100px, 88px, '../images/sprite.png', 'fb-h', );
+$fb-name: 'fb';
+$fb-x: 36px;
+$fb-y: 36px;
+$fb-offset-x: -36px;
+$fb-offset-y: -36px;
+$fb-width: 26px;
+$fb-height: 26px;
+$fb-total-width: 100px;
+$fb-total-height: 88px;
+$fb-image: '../images/sprite.png';
+$fb: (36px, 36px, -36px, -36px, 26px, 26px, 100px, 88px, '../images/sprite.png', 'fb', );
+$map-name: 'map';
+$map-x: 0px;
+$map-y: 72px;
+$map-offset-x: 0px;
+$map-offset-y: -72px;
+$map-width: 12px;
+$map-height: 16px;
+$map-total-width: 100px;
+$map-total-height: 88px;
+$map-image: '../images/sprite.png';
+$map: (0px, 72px, 0px, -72px, 12px, 16px, 100px, 88px, '../images/sprite.png', 'map', );
+$tel-name: 'tel';
+$tel-x: 22px;
+$tel-y: 72px;
+$tel-offset-x: -22px;
+$tel-offset-y: -72px;
+$tel-width: 12px;
+$tel-height: 16px;
+$tel-total-width: 100px;
+$tel-total-height: 88px;
+$tel-image: '../images/sprite.png';
+$tel: (22px, 72px, -22px, -72px, 12px, 16px, 100px, 88px, '../images/sprite.png', 'tel', );
+$tw-h-name: 'tw-h';
+$tw-h-x: 74px;
+$tw-h-y: 0px;
+$tw-h-offset-x: -74px;
+$tw-h-offset-y: 0px;
+$tw-h-width: 26px;
+$tw-h-height: 26px;
+$tw-h-total-width: 100px;
+$tw-h-total-height: 88px;
+$tw-h-image: '../images/sprite.png';
+$tw-h: (74px, 0px, -74px, 0px, 26px, 26px, 100px, 88px, '../images/sprite.png', 'tw-h', );
+$tw-name: 'tw';
+$tw-x: 74px;
+$tw-y: 36px;
+$tw-offset-x: -74px;
+$tw-offset-y: -36px;
+$tw-width: 26px;
+$tw-height: 26px;
+$tw-total-width: 100px;
+$tw-total-height: 88px;
+$tw-image: '../images/sprite.png';
+$tw: (74px, 36px, -74px, -36px, 26px, 26px, 100px, 88px, '../images/sprite.png', 'tw', );
+$vk-h-name: 'vk-h';
+$vk-h-x: 0px;
+$vk-h-y: 0px;
+$vk-h-offset-x: 0px;
+$vk-h-offset-y: 0px;
+$vk-h-width: 27px;
+$vk-h-height: 26px;
+$vk-h-total-width: 100px;
+$vk-h-total-height: 88px;
+$vk-h-image: '../images/sprite.png';
+$vk-h: (0px, 0px, 0px, 0px, 27px, 26px, 100px, 88px, '../images/sprite.png', 'vk-h', );
+$vk-name: 'vk';
+$vk-x: 37px;
+$vk-y: 0px;
+$vk-offset-x: -37px;
+$vk-offset-y: 0px;
+$vk-width: 27px;
+$vk-height: 26px;
+$vk-total-width: 100px;
+$vk-total-height: 88px;
+$vk-image: '../images/sprite.png';
+$vk: (37px, 0px, -37px, 0px, 27px, 26px, 100px, 88px, '../images/sprite.png', 'vk', );
+$spritesheet-width: 100px;
+$spritesheet-height: 88px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($fb-h, $fb, $map, $tel, $tw-h, $tw, $vk-h, $vk, );
+$spritesheet: (100px, 88px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

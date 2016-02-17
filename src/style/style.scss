@@ -1,5 +1,9 @@
-@import "../../bower_components/normalize.css/normalize";
+@import "./bower_components/normalize.css/normalize";
+@import "./partials/fonts";
 
 
 
-// @import "partials/.scss";
+@import "./partials/global";
+@import "./partials/sprite";
+@import "./partials/header";
+@import "./partials/breadcrumbs";

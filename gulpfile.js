@@ -39,7 +39,8 @@ var path = {
       style: 'src/style/**/*.scss',
       img: 'src/images/img/*.*',
       fonts: 'src/fonts/**/*.*',
-      jade: 'src/jade/**/*.jade'
+      jade: 'src/jade/**/*.jade',
+      sprite: 'src/images/ico/*.*'
     },
     test: {
       html: 'test/',
@@ -159,10 +160,7 @@ gulp.task('style:build', function () {
 gulp.task('style_test:build', function () {
   gulp.src(path.src.style)
     .pipe(plumber())
-    .pipe(sass({
-        includePaths: ['src/style/'],
-        errLogToConsole: true
-    }))
+    .pipe(sass().on('error', sass.logError))
     .pipe(prefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -200,11 +198,12 @@ gulp.task('fonts_test:build', function() {
     .pipe(gulp.dest(path.test.fonts))
 });
 
-
 gulp.task('sprite', function () {
   var spriteData = gulp.src(path.src.sprite).pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: '../../style/partials/sprite.scss'
+    cssName: '/style/partials/sprite.scss',
+    imgPath: '../images/sprite.png',
+    padding: 10
   }));
   return spriteData.pipe(gulp.dest('src/images/img/'));
 });
@@ -216,7 +215,8 @@ gulp.task('build', [
   'md:build',
   'style:build',
   'fonts:build',
-  'image:build'
+  'image:build',
+  'sprite'
 ]);
 
 gulp.task('test', [
@@ -225,7 +225,8 @@ gulp.task('test', [
   'md_test:build',
   'style_test:build',
   'fonts_test:build',
-  'image_test:build'
+  'image_test:build',
+  'sprite'
 ]);
 
 
@@ -246,6 +247,9 @@ gulp.task('watch', function(){
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');
     });
+  watch([path.watch.sprite], function(event, cb) {
+    gulp.start('sprite');
+    });
 });
 
 gulp.task('watch_test', function(){
@@ -265,21 +269,12 @@ gulp.task('watch_test', function(){
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts_test:build');
     });
+  watch([path.watch.sprite], function(event, cb) {
+    gulp.start('sprite');
+    });
 });
 
 
-
-// Спрайты
-
-gulp.task('sprite', function () {
-  var spriteData = gulp.src(path.src.sprite).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: '/style/partials/sprite.scss',
-    imgPath: '/images/sprite.png',
-    padding: 10
-  }));
-  return spriteData.pipe(gulp.dest('src/images/img/'));
-});
 
 
 // Удаление папки build
