@@ -1,28 +1,29 @@
 aside.aside
-  form.aside-form
-
-    .tel
+  .tel
       -
         var tel = [
-          ['flagmans', 'Флагманы'],
-          ['budget', 'Бюджетная линейка']]
-      each item in tel
-        button(class="tel__#{item[0]}")= item[1]
+          ['#', 'flagmans', 'Флагманы'],
+          ['#', 'budget', 'Бюджетная линейка']]
+      ul.tel__list
+        each item in tel
+          li.tel__item
+            a(href="#{item[0]}" class="tel__#{item[1]}").tel__link= item[2]
+  form.aside-form
 
-    .shop
-      h3.shop-title Наличие в магазинах
+    .shop.aside-form-block
+      h3.shop__title.aside-form-title Наличие в магазинах
       -
         var shopItem = [
           ['Во всех магазинах', 'all-shop'],
           ['В ближайшем ко мне магазине', 'my-shop']
         ]
       each item in shopItem
-        input(type="radio" id="#{item[1]}")
-        label(for="#{item[1]}").shop__label= item[0]
+        .shop__radio(class="#{item[1]}")= item[0]
+      input.shop__input(type="hidden")
 
 
-    .brends
-      h3.brends-title Бренды
+    .brends.aside-form-block
+      h3.brends__title.aside-form-title Бренды
       -
         var brendsItem = [
           ['Lenovo', 'lenovo'],
@@ -32,13 +33,13 @@ aside.aside
           ['Motorola', 'motorola']
         ]
       each item in brendsItem
-        input(type="checkbox" id="#{item[1]}")
-        label(for="#{item[1]}").brends__label= item[0]
+        .brends__check=item[0]
+          input.brends__input.hidden(type="checkbox" id="#{item[1]}")
       a(href="#").brends__link Сбросить фильтр
 
 
-    .cost
-      h3.cost__table Цена
+    .cost.aside-form-block
+      h3.cost__title.aside-form-title Цена
       .cost__box
         span от
         input(type="text")
@@ -47,8 +48,8 @@ aside.aside
         .cost__line
 
 
-    .color
-      h3.color__title Цвет
+    .color.aside-form-block
+      h3.color__title.aside-form-title Цвет
       -
         var colorItem = [
           ['#', 'white', 'Белый'],
@@ -70,8 +71,8 @@ aside.aside
             a(href='#{item[0]}' class='color__link--#{item[1]}').color__link= item[2]
 
 
-    .os
-      h3.os__title Операционные системы
+    .os.aside-form-block
+      h3.os__title.aside-form-title Операционные системы
       -
         var osItem = [
           ['Android', 'android'],

@@ -1,0 +1,120 @@
+.main-title{
+  margin-bottom: 30px;
+}
+.tel{
+  box-sizing: border-box;
+  border: 1px solid #dee1e4;
+  border-radius: 5px;
+  overflow: hidden;
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &__link{
+  font-family: "open_sansregular", sans-serif;
+  font-size: 14px;
+  padding: 15px 30px;
+  display: block;
+  border-top: 1px solid #dee1e4;
+  text-decoration: none;
+  color: #7f7f7f;
+  }
+  &__flagmans{
+    border-top: none;
+    background: #fbfbfb;
+  }
+  &__budget{
+    background: #d9e5ea;
+  }
+}
+
+.aside-form{
+  box-sizing: border-box;
+  border: 1px solid #dee1e4;
+  border-radius: 5px;
+  margin-top: 40px;
+  overflow: hidden;
+  background: #fbfbfb;
+  & label{
+    display: inline-block;
+  }
+}
+
+.aside-form-block{
+  padding: 15px 30px;
+  border-top: 1px solid #dee1e4;
+  &:first-child{
+    border-top: none;
+  }
+}
+
+.aside-form-title{
+  font-family: "open_sanssemibold", sans-serif;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+
+}
+
+//--------------- Radiobutton ----------------
+
+.shop{
+  margin-left: 30px;
+  &__title{
+    margin-left: -30px;
+  }
+  &__radio{
+    position: relative;
+    font-family: "open_sansregular", sans-serif;
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    &:before{
+      content: "";
+      @include sprite($radio-p);
+      position: absolute;
+      left: -29px;
+      top: 50%;
+      margin-top: -9px;
+      display: block;
+      cursor: pointer;
+    }
+    &--active{
+      &:before{
+        @include sprite($radio-a);
+      }
+    }
+  }
+}
+
+
+// ----------- Checkbox ---------------
+
+.brends{
+  margin-left: 30px;
+  &__title{
+    margin-left: -30px;
+  }
+  &__check{
+    position: relative;
+    font-family: "open_sansregular", sans-serif;
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    &:before{
+      content: "";
+      @include sprite($check-p);
+      position: absolute;
+      left: -29px;
+      top: 50%;
+      margin-top: -9px;
+      display: block;
+      cursor: pointer;
+    }
+    &--active{
+      &:before{
+        @include sprite($check-a);
+      }
+    }
+  }
+}

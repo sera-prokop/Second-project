@@ -201,11 +201,13 @@ gulp.task('fonts_test:build', function() {
 gulp.task('sprite', function () {
   var spriteData = gulp.src(path.src.sprite).pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: '/style/partials/sprite.scss',
+    cssName: 'sprite.scss',
     imgPath: '../images/sprite.png',
     padding: 10
   }));
-  return spriteData.pipe(gulp.dest('src/images/img/'));
+    var imgStream = spriteData.img.pipe(gulp.dest('src/images/img/'));
+    var cssStream = spriteData.css.pipe(gulp.dest('src/style/partials/'));
+    return (imgStream, cssStream);
 });
 
 
