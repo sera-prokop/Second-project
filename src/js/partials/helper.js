@@ -12,11 +12,14 @@ $('.shop').find('.shop__radio').each(function(){
 //----------- Checkbox ----------
 $('.brends__link').on('click', function(e){
   e.preventDefault()
-    // $('.brends__check').find('.brends__input').prop('checked', false);
-});
+  $('.brends').find('.brends__check').removeClass('brends__check--active');
+  $('.brends').find('.brends__input').prop('checked', false);
 
 
-$('.brends__check').on('click', function(){
+  });
+
+
+$('.brends').find('.brends__check').on('click', function(){
   if($(this).find('.brends__input').prop('checked')){
     $(this).removeClass('brends__check--active');
     $(this).find('.brends__input').prop('checked', false);
@@ -25,4 +28,5 @@ $('.brends__check').on('click', function(){
     $(this).find('.brends__input').prop('checked', true);
   }
 });
+
 
