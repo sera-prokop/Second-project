@@ -205,9 +205,8 @@ gulp.task('sprite', function () {
     imgPath: '../images/sprite.png',
     padding: 10
   }));
-    var imgStream = spriteData.img.pipe(gulp.dest('src/images/img/'));
-    var cssStream = spriteData.css.pipe(gulp.dest('src/style/partials/'));
-    return (imgStream, cssStream);
+    spriteData.img.pipe(gulp.dest('src/images/img/'));
+    spriteData.css.pipe(gulp.dest('src/style/partials/'));
 });
 
 
