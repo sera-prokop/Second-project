@@ -36,9 +36,6 @@
   margin-top: 40px;
   overflow: hidden;
   background: #fbfbfb;
-  & label{
-    display: inline-block;
-  }
 }
 
 .aside-form-block{
@@ -90,7 +87,7 @@
 
 // ----------- Checkbox ---------------
 
-.brends{
+.brends, .os{
   margin-left: 30px;
   &__title{
     margin-left: -30px;
@@ -117,4 +114,73 @@
       }
     }
   }
+}
+
+.brends__link, .os__link{
+  margin-left: -30px;
+  font-family: "open_sansregular", sans-serif;
+  color: #00b3ff;
+  font-size: 14px;
+}
+
+
+//----------- Color -----------
+
+.color{
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0;
+  }
+  &__item{
+    display: inline-block;
+  }
+  &__link{
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dee2e5;
+    display: block;
+    margin: 0 20px 20px 0;
+    &--white{
+      background: #fff;
+  }
+    &--gray{
+      background: gray;
+    }
+    &--black{
+      background: #000;
+    }
+    &--d-blue{
+      background: #002d53;
+    }
+    &--red{
+      background: #ff1100;
+    }
+    &--yellow{
+      background: #fff324;
+    }
+    &--biscuit{
+      background: #ff9243;
+    }
+    &--green{
+      background: #78c479;
+    }
+    &--blue{
+      background: #00a7ff;
+    }
+    &--purple{
+      background: #a670b0;
+    }
+    &--pink{
+      background: #f879b0;
+    }
+    &--brown{
+      background: #913d14;
+    }
+    &:hover{
+      outline: 2px solid #ff6600;
+    }
+  }
+
 }

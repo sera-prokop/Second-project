@@ -82,8 +82,8 @@ aside.aside
           ['Custom', 'custom']
         ]
       each item in osItem
-        input(type="checkbox" id="#{item[1]}")
-        label(for="#{item[1]}").os__label= item[0]
+        .os__check=item[0]
+          input.os__input.hidden(type="checkbox" id="#{item[1]}")
       a(href="#").os__link Сбросить фильтр
 
 

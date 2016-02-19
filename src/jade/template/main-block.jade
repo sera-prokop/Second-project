@@ -1,25 +1,29 @@
 .main-content
-  .sorting
-    form(action="#" method="post").sorting-sel
-      span.sorting-sel__by Сортировать по
-      select.sorting-sel__sel
-        - var sortSelect = ['по цене', 'по популярности'];
-        each item in sortSelect
-          option.sorting-sel__option= item
+  .main-content-top.clearfix
+    .sorting
+      form(action="#" method="post").sorting-sel
+        span.sorting-sel__by.sorting__by Сортировать по
+        select.sorting-sel__sel
+          - var sortSelect = ['по цене', 'по популярности'];
+          each item in sortSelect
+            option.sorting-sel__option= item
 
 
-  .view
-    span.view__descr Вид каталога
-    -var view = ['min', 'middle', 'norm']
-    each item in view
-      .view__switch(class=".view__switch--#{item}")
+    .view
+      span.view__descr Вид каталога
+      -var view = ['min', 'middle', 'norm']
+      ul.view__list
+        each item in view
+          li.view__item
+            a.view__link(href="#")
+              span(class="view--#{item}")
 
 
 
   - var leftImg = [['galaxy'], ['lumia'], ['archos'], ['philips'], ['lumia2'], ['senseit'], ['highscreen'], ['alcatel'], ['fly']]
-  - var leftMinImg1 = [['1'], [''], [''], [''], [''], [''], [''], ['']]
-  - var leftMinImg2 = [['2'], [''], [''], [''], [''], [''], [''], ['']]
-  - var leftMinImg3 = [['3'], [''], [''], [''], [''], [''], [''], ['']]
+  - var leftMinImg1 = [['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
+  - var leftMinImg2 = [['2'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
+  - var leftMinImg3 = [['3'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
   - var leftVendor = [['189238'], ['283135'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238']]
 
 
@@ -38,21 +42,24 @@
   - var rightPrice = [['11290'], ['10990'], ['9900'], ['8990'], ['5390'], ['4990'], ['3990'], ['3290'], ['1790']]
 
   - for(var i = 0; i < 9; i++)
-    .product
+    .product.clearfix
       .product__block-left.block-left
         .block-left__img
           img(src="images/#{leftImg[i]}.png")
         .block-left__min-img
+          .block-left__min-img-wr
             img(src="images/#{leftMinImg1[i]}.png")
+          .block-left__min-img-wr
             img(src="images/#{leftMinImg2[i]}.png")
+          .block-left__min-img-wr
             img(src="images/#{leftMinImg3[i]}.png")
-        .block-left__vendor
-          span Артикул #{leftVendor[i]}
-      .product__block-center
+        .block-left__vendor Артикул
+          span #{leftVendor[i]}
+      .product__block-center.block-center
         h3.block-center__title #{centerTitle[i]}
         .block-center__description #{centerDescr[i]}
         .block-center__rating
-      .product__block-right #{rightPrice[i]}
+      .product__block-right.block-right #{rightPrice[i]}
         .block-right__price
         button.block-right__recycler В корзину
         .block-right__avial В наличии

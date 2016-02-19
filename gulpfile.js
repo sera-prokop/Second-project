@@ -160,7 +160,7 @@ gulp.task('style:build', function () {
 gulp.task('style_test:build', function () {
   gulp.src(path.src.style)
     .pipe(plumber())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass())
     .pipe(prefixer({
       browsers: ['last 2 versions'],
       cascade: false
