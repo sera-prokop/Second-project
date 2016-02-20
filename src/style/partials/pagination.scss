@@ -1,0 +1,26 @@
+.pagination{
+  text-align: right;
+  margin-bottom: 30px;
+  &__block{
+    display: inline-block;
+  }
+  &__link{
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px solid #dee1e4;
+    border-radius: 5px;
+    padding: 3px 10px;
+    display: block;
+    background: #fefefe;
+    font-family: "open_sansbold", sans-serif;
+    font-size: 12px;
+    line-height: 1.83;
+    color: #7f7f7f;
+    &:hover{
+      opacity: 0.7;
+    }
+    &--active{
+      background: #e0e0e0;
+    }
+  }
+}

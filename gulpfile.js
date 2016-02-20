@@ -212,9 +212,9 @@ gulp.task('sprite', function () {
 
 gulp.task('build', [
   'html:build',
+  'style:build',
   'js:build',
   'md:build',
-  'style:build',
   'fonts:build',
   'image:build',
   'sprite'
@@ -222,9 +222,9 @@ gulp.task('build', [
 
 gulp.task('test', [
   'html_test:build',
+  'style_test:build',
   'js_test:build',
   'md_test:build',
-  'style_test:build',
   'fonts_test:build',
   'image_test:build',
   'sprite'
@@ -242,14 +242,14 @@ gulp.task('watch', function(){
     gulp.start('js:build');
     gulp.start('md:build');
     });
+  watch([path.watch.sprite], function(event, cb) {
+    gulp.start('sprite');
+    });
   watch([path.watch.img], function(event, cb) {
     gulp.start('image:build');
     });
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');
-    });
-  watch([path.watch.sprite], function(event, cb) {
-    gulp.start('sprite');
     });
 });
 
@@ -264,14 +264,14 @@ gulp.task('watch_test', function(){
     gulp.start('js_test:build');
     gulp.start('md_test:build');
     });
+  watch([path.watch.sprite], function(event, cb) {
+    gulp.start('sprite');
+    });
   watch([path.watch.img], function(event, cb) {
     gulp.start('image_test:build');
     });
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts_test:build');
-    });
-  watch([path.watch.sprite], function(event, cb) {
-    gulp.start('sprite');
     });
 });
 

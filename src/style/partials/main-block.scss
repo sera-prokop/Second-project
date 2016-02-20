@@ -88,6 +88,8 @@
   }
 }
 
+// -------------- Основной блок ------------------
+
 .product{
   width: 740px;
   background-color: rgba(255, 255, 255, 0.6);
@@ -150,6 +152,9 @@
     & img{
       vertical-align: middle;
     }
+    &:hover{
+      border: 1px solid #ff6600;
+    }
   }
   &__vendor{
     width: 136px;
@@ -178,5 +183,44 @@
     font-family: "open_sansregular", sans-serif;
     line-height: 1.4;
     font-size: 14px;
+  }
+}
+
+.block-right{
+  border-left: 1px solid #dee1e4;
+  padding-left: 24px;
+  &__price{
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 130px;
+    text-align: right;
+  }
+  &__recycler{
+    padding: 7px 15px;
+    font-family: "open_sansbold", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #ff6704;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  &__avial{
+    font-family: "open_sansbold", sans-serif;
+    font-size: 12px;
+    line-height: 1.666;
+    text-align: right;
+    margin-bottom: 10px;
+    position: relative;
+    &:before{
+      content: "";
+      @include sprite($green);
+      display: block;
+      position: absolute;
+      top: 50%;
+      margin-top: -4px;
+      left: 23px;
+    }
   }
 }
