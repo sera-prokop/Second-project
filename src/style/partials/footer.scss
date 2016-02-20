@@ -1,0 +1,98 @@
+.footer{
+  background:  url('/images/footer-bg.png') 0 0 repeat;
+  position: relative;
+  &:before{
+    content: "";
+    display: block;
+    min-width: 100%;
+    position: absolute;
+    bottom: 35px;
+    border-bottom: 1px solid #474747;
+  }
+}
+
+.footer-top-logo{
+  float: left;
+  width: 240px;
+  padding-top: 70px;
+  overflow: hidden;
+}
+
+.social-f{
+  float: right;
+  width: 185px;
+  padding-top: 35px;
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0;
+  }
+  &__item{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 24px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  &__link{
+    display: block;
+    text-indent: -9999px;
+    &--fb{
+      @include sprite($fb-f);
+      &:hover{
+        @include sprite($fb-f-h);
+      }
+     }
+    &--vk{
+      @include sprite($vk-f);
+      &:hover{
+        @include sprite($vk-f-h);
+      }
+     }
+    &--tw{
+      @include sprite($tw-f);
+      &:hover{
+        @include sprite($tw-f-h);
+      }
+    }
+  }
+}
+
+.footer-top-menu{
+  margin-left: 565px;
+  margin-bottom: 22px;
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0;
+  }
+  &__item{
+    display: inline-block;
+    vertical-align: middle;
+    &:first-child{
+      padding-left: 168px;
+    }
+
+  }
+  &__link{
+    font-family: "open_sansregular", serif;
+    font-size: 14px;
+    line-height: 2.571;
+    color: #fff;
+    padding-right: 27px;
+    &--tech, &--mp3{
+      padding-right: 0;
+    }
+  }
+}
+
+.footer-bottom{
+  color: #fff;
+  text-align: center;
+  font-family: "open_sansregular", serif;
+  font-size: 14px;
+  line-height: 2.571;
+}

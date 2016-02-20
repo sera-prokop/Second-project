@@ -1,23 +1,23 @@
 .footer
-  .footer-top
-    .social
-      ul.social__list
-        -
-          var socialItem = [
-            ['https://www.facebook.com/', 'fb', 'Facebook'],
-            ['http://vk.com/', 'vk', 'Вконтакте'],
-            ['https://twitter.com/', 'tw', 'Twitter']
-          ];
-        each param in socialItem
-          li.social__item
-            a(href="#{param[0]}" class="social__link--#{param[1]}" target="_blank").social__link= param[2]
-    .footer-top-logo
-      a.logo(href="/")
-        img.logo__img(src="/images/logo-footer.png" alt="Logo")
+  .center
+    .footer-top.clearfix
+      .footer-top-logo
+        a.logo-f(href="/")
+          img.logo-f__img(src="/images/logo-footer.png" alt="Logo")
+      .social-f
+        ul.social-f__list
+          -
+            var socialFooter = [
+              ['https://www.facebook.com/', 'fb', 'Facebook'],
+              ['http://vk.com/', 'vk', 'Вконтакте'],
+              ['https://twitter.com/', 'tw', 'Twitter']
+            ];
+          each param in socialFooter
+            li.social-f__item
+              a(href="#{param[0]}" class="social-f__link--#{param[1]}" target="_blank").social-f__link= param[2]
     .footer-top-menu
-    ul.footer-menu__list
-      - var select = 'mobile'
-      each item in headerMenuItem
-        li.header-menu__item
-          a(href="#{item[0]}" class='header-menu__link--#{item[1]}').header-menu__link= item[2]
-  .footer-bottom All rights reserved. 2016. no copy alowed
+      ul.footer-top-menu__list
+        each item in headerMenuItem
+          li.footer-top-menu__item
+            a(href="#{item[0]}" class='footer-top-menu__link--#{item[1]}').footer-top-menu__link= item[2]
+    .footer-bottom All rights reserved. 2016. no copy alowed
