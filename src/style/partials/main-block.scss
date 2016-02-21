@@ -55,8 +55,9 @@
   &__item{
     display: inline-block;
     vertical-align: middle;
-
-
+    &--active{
+      background: #dee2e5;
+    }
   }
   &__link{
     display: inline-block;
@@ -90,149 +91,368 @@
 
 // -------------- Основной блок ------------------
 
-.product{
-  width: 740px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #dee2e5;
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 20px;
-  box-sizing: border-box;
-  &:hover{
-    box-shadow: 0 1px 5.7px 0.3px rgba(119, 119, 119, 0.75);
-  }
-  &__block-left{
-    box-sizing: border-box;
-    width: 160px;
-    float: left;
-  }
-  &__block-center{
-    box-sizing: border-box;
-    width: 405px;
-    float: left;
-  }
-  &__block-right{
-    box-sizing: border-box;
-    width: 130px;
-    float: right;
-  }
-}
-
-.block-left{
-  &__img{
-    width: 136px;
-    background-color: white;
+.view-switch--norm{
+  .product{
+    width: 740px;
+    background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid #dee2e5;
-    border-radius: 2px;
-    text-align: center;
-    display: inline-block;
-    line-height: 136px;
+    border-radius: 5px;
     overflow: hidden;
-    margin-bottom: 15px;
-    & img{
-      vertical-align: middle;
-    }
-  }
-  &__min-img{
-    width: 136px;
-    text-align: center;
-  }
-  &__min-img-wr{
-    display: inline-block;
-    margin-left: 12px;
-    width: 34px;
-    line-height: 34px;
-    text-align: center;
-    border: 1px solid #dee2e5;
+    padding: 20px;
     box-sizing: border-box;
-    margin-bottom: 10px;
-    &:first-child{
-      margin-left: 0;
-    }
-    & img{
-      vertical-align: middle;
-    }
     &:hover{
-      border: 1px solid #ff6600;
+      box-shadow: 0 1px 5.7px 0.3px rgba(119, 119, 119, 0.75);
     }
-  }
-  &__vendor{
-    width: 136px;
-    text-align: center;
-    font-family: "open_sansbold", sans-serif;
-    font-size: 12px;
-    color: #898989;
-    & span{
-    font-size: 14px;
-    font-family: "open_sanssemibold", sans-serif;
-    padding-left: 5px;
-    color: #6b6b6b;
+    &__list{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    &__block-left{
+      box-sizing: border-box;
+      width: 136px;
+      float: left;
+    }
+    &__block-center{
+      box-sizing: border-box;
+      width: 405px;
+      float: left;
+      margin-left: 24px;
+    }
+    &__block-right{
+      box-sizing: border-box;
+      width: 130px;
+      float: right;
     }
   }
 }
-
-.block-center{
-  &__title{
-    font-family: "open_sanssemibold", sans-serif;
-    font-size: 16px;
-    line-height: 1.25;
-    margin-top: 0;
-    padding-top: 0;
-  }
-  &__description{
-    font-family: "open_sansregular", sans-serif;
-    line-height: 1.4;
-    font-size: 14px;
-  }
-}
-
-.block-right{
-  &__price{
-    font-family: "open_sanssemibold", sans-serif;
-    font-size: 20px;
-    line-height: 1;
-    text-align: right;
-    span{
-      font-family: "PTRoubleDecorative", serif;
-      font-size: 22px;
-      line-height: 1;
+  .block-left{
+    &__img{
+      width: 136px;
+      background-color: white;
+      border: 1px solid #dee2e5;
+      border-radius: 2px;
+      text-align: center;
+      display: inline-block;
+      line-height: 136px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      & img{
+        vertical-align: middle;
+      }
+    }
+    &__min-img{
+      text-align: center;
+    }
+    &__min-img-wr{
+      display: inline-block;
+      margin-left: 12px;
+      width: 34px;
+      line-height: 34px;
+      text-align: center;
+      border: 1px solid #dee2e5;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      &:first-child{
+        margin-left: 0;
+      }
+      & img{
+        vertical-align: middle;
+      }
+      &:hover{
+        border: 1px solid #ff6600;
+      }
+    }
+    &__vendor{
+      text-align: center;
+      font-family: "open_sansbold", sans-serif;
+      font-size: 12px;
+      color: #898989;
+      & span{
+      font-size: 14px;
+      font-family: "open_sanssemibold", sans-serif;
       padding-left: 5px;
+      color: #6b6b6b;
+      }
+    }
   }
+
+  .block-center{
+    &__title-link{
+      display: block;
+      text-decoration: none;
+      color: #000;
+      font-family: "open_sanssemibold", sans-serif;
+      font-size: 16px;
+      line-height: 1.25;
+      margin-top: 0;
+      padding-top: 0;
+      &:hover{
+        opacity:0.7;
+      }
+    }
+    &__description{
+      font-family: "open_sansregular", sans-serif;
+      line-height: 1.4;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
   }
-  border-left: 1px solid #dee1e4;
-  padding-left: 24px;
-  &__price{
-    font-size: 20px;
-    line-height: 1;
-    margin-bottom: 130px;
-    text-align: right;
+
+  .block-right{
+    border-left: 1px solid #dee1e4;
+    padding-left: 24px;
+    &__price{
+      font-family: "open_sanssemibold", sans-serif;
+      font-size: 20px;
+      line-height: 1.2;
+      text-align: right;
+      &:after{
+        content: "Ц";
+        font-family: "PTRoubleDecorative", serif;
+        display: inline-block;
+        padding-left: 5px;
+      }
+    }
+    &__price{
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 130px;
+      text-align: right;
+    }
+    &__recycler{
+      padding: 7px 15px;
+      font-family: "open_sansbold", sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      background: #ff6704;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    &__avial{
+      font-family: "open_sansbold", sans-serif;
+      font-size: 12px;
+      line-height: 1.666;
+      text-align: right;
+      margin-bottom: 10px;
+      position: relative;
+      color: #898989;
+      &:before{
+        content: "";
+        @include sprite($green);
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
   }
-  &__recycler{
-    padding: 7px 15px;
-    font-family: "open_sansbold", sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
-    background: #ff6704;
-    border: none;
+
+
+.rating{
+
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-right: 10px;
+  }
+  &__item{
+    display: inline-block;
+    vertical-align: bottom;
+    @include sprite($star-h);
+    &:last-child{
+      @include sprite($star);
+    }
+  }
+  &__val{
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: "open_sanssemibold", sans-serif;
+    font-size: 12px;
+    padding: 0 12px 0 10px;
+    background: #b2bfcc;
     color: #fff;
     border-radius: 5px;
-    margin-bottom: 10px;
+    text-align: center;
   }
-  &__avial{
-    font-family: "open_sansbold", sans-serif;
-    font-size: 12px;
-    line-height: 1.666;
-    text-align: right;
+}
+
+.block-middle{
+  display: none;
+}
+
+
+//--- Product small ---
+
+.view-switch--min{
+  .product{
+    padding: 10px 10px;
+    line-height: 50px;
+    width: 740px;
+  }
+  .block-left{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 105px;
+    margin: 0;
+    line-height: 1.2;
+    &__img{
+      display: none;
+    }
+    &__min-img{
+      display: none;
+    }
+  }
+  .block-center{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 280px;
+    &__title-link{
+      vertical-align: middle;
+      white-space:nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      width: 280px;
+      font-family: "open_sanssemibold", sans-serif;
+      line-height: 1.2;
+      margin: 0;
+      &:before{
+        content: "Смартфон";
+        padding-right: 10px;
+      }
+    }
+    &__description{
+      display: none;
+    }
+    &__rating{
+      display: none;
+    }
+  }
+  .block-right{
+    float: none;
+    width: 300px;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: none;
+    margin:10px 0 0 0;
+    padding: 0;
+    &__price{
+      float: left;
+      width: 80px;
+      font-size: 18px;
+      line-height: 1.2;
+      margin: 0;
+    }
+    &__recycler{
+      float: right;
+      line-height: 1.2;
+    }
+    &__avial{
+      float: left;
+      line-height: 1.2;
+      margin:6px 0 0 20px;
+    }
+  }
+}
+
+.block-middle{
+  display: none;
+}
+
+//----- Product middle -----
+
+.view-switch--middle{
+  font-size: 0;
+  .product{
+    width: 235px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 17px;
+    margin-bottom: 20px;
+    &:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+  .block-left{
+    float: none;
+    width: auto;
+    text-align: center;
+    &__vendor{
+      display: none;
+    }
+  }
+  .block-center{
+    float: none;
+    width: auto;
+    margin-left: 0;
+    text-align: center;
     margin-bottom: 10px;
-    position: relative;
-    &:before{
-      content: "";
-      @include sprite($green);
+    &__title-link{
+
+      min-height: 50px;
+      line-height: 1.43;
+      font-size: 14px;
+    }
+    &__description{
+      display: none;
+    }
+    &__middle-hid{
       display: block;
-      position: absolute;
-      top: 50%;
-      margin-top: -4px;
-      left: 23px;
+      font-size: 14px;
+      font-family: "open_sansregular", sans-serif;
+      line-height: 1.43;
+    }
+  }
+  .block-right{
+    float: none;
+    text-align: center;
+    width: auto;
+    border: none;
+    padding-left: 0;
+    &__price{
+      margin-bottom: 0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    &__recycler{
+      display: inline-block;
+      float: right;
+
+    }
+    &__avial{
+      display: inline-block;
+      float: left;
+      line-height: 33px;
+      padding-left: 10px;
+    }
+  }
+  .block-middle{
+      display: block;
+      font-size: 14px;
+      font-family: "open_sansregular", sans-serif;
+      line-height: 1.43;
+      margin-bottom: 10px;
+    &__list{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: left;
+    }
+    &__item{
+      &:nth-child(odd){
+        background: #e7e7e7;
+      }
+    }
+    &__right{
+      float: right;
     }
   }
 }

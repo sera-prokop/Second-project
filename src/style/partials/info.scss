@@ -1,3 +1,15 @@
 .information{
   margin-bottom: 30px;
+  &__p{
+    font-family: "open_sansregular", sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: justify;
+  }
+}
+.column{
+  width: 48%!important;
+}
+.last {
+  float: right!important;
 }

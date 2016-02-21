@@ -30,7 +30,7 @@ $('.brends').find('.brends__check').on('click', function(){
 //----------- Checkbox os----------
 
 $('.os__link').on('click', function(e){
-  e.preventDefault()
+  e.preventDefault();
   $('.os').find('.os__check').removeClass('os__check--active');
   $('.os').find('.os__input').prop('checked', false);
   });
@@ -51,3 +51,27 @@ $(document).ready(function(){
   $('.sorting-sel__sel').styler();
 });
 
+
+
+//------------ Columnizer --------------
+
+$('.information__p').columnize({ columns: 2 });
+$('.information__title').addClass('removeiffirst');;
+$('.info').addClass('dontsplit');
+
+
+
+
+//------------ Tab --------------
+
+$(document).ready(function(){
+  $('.view__link').on('click', function(e){
+    e.preventDefault();
+    var swTab = $(this).attr('data-class');
+    $('#tab').removeClass().addClass(swTab);
+
+    $(this).closest('.view__item').addClass('view__item--active');
+    $(this).closest('.view__item').siblings().removeClass('view__item--active');
+
+  });
+});
