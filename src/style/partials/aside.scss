@@ -19,6 +19,9 @@
   border-top: 1px solid #dee1e4;
   text-decoration: none;
   color: #7f7f7f;
+  &:hover{
+    opacity: 0.6;
+    }
   }
   &__flagmans{
     border-top: none;
@@ -27,6 +30,7 @@
   &__budget{
     background: #d9e5ea;
   }
+
 }
 
 .aside-form{
