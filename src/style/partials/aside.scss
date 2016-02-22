@@ -45,6 +45,8 @@
 .aside-form-block{
   padding: 15px 30px;
   border-top: 1px solid #dee1e4;
+  position: relative;
+
   &:first-child{
     border-top: none;
   }
@@ -60,7 +62,23 @@
 //--------------- Radiobutton ----------------
 
 .shop{
-  margin-left: 30px;
+  padding-left: 60px;
+  &:hover .arrow{
+    @include sprite($arrow-t)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &:hover .arrow2{
+    @include sprite($arrow-d)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
   &__title{
     margin-left: -30px;
   }
@@ -92,7 +110,7 @@
 // ----------- Checkbox ---------------
 
 .brends, .os{
-  margin-left: 30px;
+  padding-left: 60px;
   &__title{
     margin-left: -30px;
   }
@@ -126,11 +144,103 @@
   color: #00b3ff;
   font-size: 14px;
 }
+.brends{
+  &:hover .arrow{
+    @include sprite($arrow-t)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &:hover .arrow2{
+    @include sprite($arrow-d)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+.os{
+  &:hover .arrow{
+    @include sprite($arrow-t)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &:hover .arrow2{
+    @include sprite($arrow-d)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+
+//--------- Cost ------------
+
+.cost{
+  &:hover .arrow{
+    @include sprite($arrow-t)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &:hover .arrow2{
+    @include sprite($arrow-d)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &__span{
+    font-family: "open_sansregular", sans-serif;
+    font-size: 14px;
+    padding-right: 5px;
+  }
+  &__input{
+    font-family: "open_sansregular", sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width: 80px;
+    &:first-child{
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
 
 
 //----------- Color -----------
 
 .color{
+  &:hover .arrow{
+    @include sprite($arrow-t)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &:hover .arrow2{
+    @include sprite($arrow-d)
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+  }
   &__list{
     margin: 0;
     padding: 0;

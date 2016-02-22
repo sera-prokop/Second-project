@@ -48,7 +48,16 @@ $('.os').find('.os__check').on('click', function(){
 //----------- Select -----------
 
 $(document).ready(function(){
-  $('.sorting-sel__sel').styler();
+  $('.sorting-sel__sel').styler({
+    onSelectOpened: function() {
+      var selectB = $(this).find('.jq-selectbox__trigger-arrow');
+      selectB.addClass('jq-selectbox__trigger-arrow1')
+    },
+    onSelectClosed: function() {
+      var selectB = $(this).find('.jq-selectbox__trigger-arrow');
+      selectB.removeClass('jq-selectbox__trigger-arrow1')
+    }
+  });
 });
 
 
@@ -72,6 +81,33 @@ $(document).ready(function(){
 
     $(this).closest('.view__item').addClass('view__item--active');
     $(this).closest('.view__item').siblings().removeClass('view__item--active');
+
+  });
+});
+
+//------------- Slider ----------------
+
+
+$( "#slider" ).slider({
+  range: true,
+  values: [ 17, 67 ],
+  slide: function( event, ui ) {
+        $( "#amount" ).val(ui.values[ 0 ]);
+        $( "#amount2" ).val(ui.values[ 1 ] );
+      }
+});
+$( "#amount" ).val($( "#slider" ).slider( "values", 0 ) );
+$( "#amount2" ).val($( "#slider" ).slider( "values", 1 ) );
+
+//----------- Аккордеон --------------
+
+
+
+$(document).ready(function(){
+  $('.arrow').on('click', function(e){
+    $(this).siblings('.aside-wrapper').slideToggle(300).stop(true, true);
+    $(this).toggleClass('arrow2');
+    $(this).siblings('.aside-form-title').css('marginBottom', 0)
 
   });
 });

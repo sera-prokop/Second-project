@@ -15,24 +15,6 @@
     padding-right: 10px;
   }
 }
-.jq-selectbox{
-  width: 140px;
-}
-.jq-selectbox__select{
-  font-family: "open_sanslight", sans-serif;
-  font-size: 14px;
-  background-color: white;
-  border: 1px solid #eaeef0;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 1px #959595;
-
-}
-.jq-selectbox.focused .jq-selectbox__select {
-  border: none;
-}
-.jq-selectbox__trigger{
-  border-left: none;
-}
 
 .view{
   width: 260px;
@@ -56,7 +38,7 @@
     display: inline-block;
     vertical-align: middle;
     &--active{
-      background: #dee2e5;
+      background: #E7E7E7;
     }
   }
   &__link{
@@ -64,7 +46,7 @@
     vertical-align: middle;
     border-left: 1px solid #dee2e5;
     position: relative;
-    padding: 20px 18px;
+    padding: 22px 18px;
     &:hover{
       opacity: 0.5;
     }

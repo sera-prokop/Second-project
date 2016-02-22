@@ -8,4 +8,6 @@
 /*
     Custom
  */
+//= partials/jquery-ui.js
+
 //= partials/helper.js

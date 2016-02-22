@@ -14,9 +14,14 @@
       -var view = ['norm', 'middle', 'min']
       ul.view__list
         each item in view
-          li.view__item
-            a.view__link(href="#" data-class="view-switch--#{item}")
-              span(class="view--#{item}")
+          if item==='norm'
+            li.view__item.view__item--active
+              a.view__link(href="#" data-class="view-switch--#{item}")
+                span(class="view--#{item}")
+          else
+            li.view__item
+              a.view__link(href="#" data-class="view-switch--#{item}")
+                span(class="view--#{item}")
 
 
 
