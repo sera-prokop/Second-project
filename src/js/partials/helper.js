@@ -10,6 +10,8 @@ $('.shop').find('.shop__radio').each(function(){
 });
 
 //----------- Checkbox brends----------
+
+
 $('.brends__link').on('click', function(e){
   e.preventDefault()
   $('.brends').find('.brends__check').removeClass('brends__check--active');
@@ -29,6 +31,7 @@ $('.brends').find('.brends__check').on('click', function(){
 
 //----------- Checkbox os----------
 
+
 $('.os__link').on('click', function(e){
   e.preventDefault();
   $('.os').find('.os__check').removeClass('os__check--active');
@@ -47,6 +50,7 @@ $('.os').find('.os__check').on('click', function(){
 
 //----------- Select -----------
 
+
 $(document).ready(function(){
   $('.sorting-sel__sel').styler({
     onSelectOpened: function() {
@@ -64,6 +68,7 @@ $(document).ready(function(){
 
 //------------ Columnizer --------------
 
+
 $('.information__p').columnize({ columns: 2 });
 $('.information__title').addClass('removeiffirst');;
 $('.info').addClass('dontsplit');
@@ -72,6 +77,7 @@ $('.info').addClass('dontsplit');
 
 
 //------------ Tab --------------
+
 
 $(document).ready(function(){
   $('.view__link').on('click', function(e){
@@ -90,7 +96,9 @@ $(document).ready(function(){
 
 $( "#slider" ).slider({
   range: true,
-  values: [ 17, 67 ],
+  min: 0,
+  max: 15000,
+  values: [ 1000, 13000 ],
   slide: function( event, ui ) {
         $( "#amount" ).val(ui.values[ 0 ]);
         $( "#amount2" ).val(ui.values[ 1 ] );
@@ -105,9 +113,23 @@ $( "#amount2" ).val($( "#slider" ).slider( "values", 1 ) );
 
 $(document).ready(function(){
   $('.arrow').on('click', function(e){
-    $(this).siblings('.aside-wrapper').slideToggle(300).stop(true, true);
+    $(this).siblings('.aside-wrapper').slideToggle().stop(true, true);
     $(this).toggleClass('arrow2');
-    $(this).siblings('.aside-form-title').css('marginBottom', 0)
+    $(this).siblings('.aside-form-title').toggleClass('aside-form-title2');
 
   });
+});
+
+
+//------------- Images --------------
+
+
+$(document).ready(function(){
+  $('.img-small').on('click', function(e){
+    var imgBig = $(this).closest('.block-left').find('.img-big').find('img');
+    var src = $(this).find('img').attr('src');
+    imgBig.fadeOut(0, function(){
+      $(this).attr('src', src).fadeIn(0);
+    })
+ });
 });

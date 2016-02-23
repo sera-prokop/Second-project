@@ -26,9 +26,9 @@
 
 
   - var leftImg = [['galaxy'], ['lumia'], ['archos'], ['philips'], ['lumia2'], ['senseit'], ['highscreen'], ['alcatel'], ['fly']]
-  - var leftMinImg1 = [['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
-  - var leftMinImg2 = [['2'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
-  - var leftMinImg3 = [['3'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
+  - var leftMinImg1 = [['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg'], ['4.jpg']]
+  - var leftMinImg2 = [['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg'], ['5.jpg']]
+  - var leftMinImg3 = [['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg'], ['6.jpg']]
   - var leftVendor = [['189238'], ['283135'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238'], ['189238']]
 
 
@@ -79,15 +79,15 @@
       - for(var i = 0; i < 9; i++)
         .product.clearfix
           .product__block-left.block-left
-            .block-left__img
-              img(src="images/#{leftImg[i]}.png")
+            .block-left__img.img-big
+              img(src="images/#{leftImg[i]}.png" alt="#")
             .block-left__min-img
-              .block-left__min-img-wr
-                img(src="images/#{leftMinImg1[i]}.png")
-              .block-left__min-img-wr
-                img(src="images/#{leftMinImg2[i]}.png")
-              .block-left__min-img-wr
-                img(src="images/#{leftMinImg3[i]}.png")
+              .block-left__min-img-wr.img-small
+                img(src="images/#{leftMinImg1[i]}" alt="#")
+              .block-left__min-img-wr.img-small
+                img(src="images/#{leftMinImg2[i]}" alt="#")
+              .block-left__min-img-wr.img-small
+                img(src="images/#{leftMinImg3[i]}" alt="#")
             .block-left__vendor Артикул
               span #{leftVendor[i]}
           .product__block-center.block-center

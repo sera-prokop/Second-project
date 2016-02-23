@@ -11,7 +11,7 @@
 }
 .social{
   float: left;
-  width: 112px;
+  width: 110px;
   &__list{
     padding: 0;
     margin: 0;
@@ -53,7 +53,7 @@
 
 .address{
   float: right;
-  max-width: 465px;
+  width: 445px;
   &__list{
     padding: 0;
     margin: 0;
@@ -67,7 +67,7 @@
     &:first-child{
       margin-left: 0;
     }
-    margin-left: 85px;
+    margin-left: 110px;
     &:before{
       content: "";
       position: absolute;
@@ -149,7 +149,7 @@
   &__input{
     font-family: "open_sanslight", serif;
     font-size: 14px;
-    padding: 8px 15px;
+    padding: 7px 16px;
     border: 1px solid #dee2e5;
     border-radius: 5px 0 0 5px;
     width: 289px;
@@ -158,10 +158,10 @@
     outline: none;
   }
   &__button{
-    margin-left: -4px;
+    margin-left: -1px;
     font-family: "open_sanssemibold", serif;
     font-size: 16px;
-    padding: 7px 16px 8px 16px;
+    padding: 6px 14px 7px 15px;
     border: none;
     background-color: #ff6601;
     color: #ffffff;
@@ -194,6 +194,7 @@
   }
 }
 
+//------------- Header menu ---------------
 
 .header-menu{
   background: #ffffff;
@@ -206,14 +207,18 @@
   &__item{
     display: inline-block;
     vertical-align: middle;
+
   }
   &__link{
     font-size: 16px;
     font-family: "open_sansregular", serif;
-    padding: 20px 15px;
+    padding: 14px 15px;
     display: block;
     text-decoration: none;
     color: #303030;
+    &--planshet{
+      padding-left: 22px;
+    }
     &:hover{
       background: #e5e3e3;
     }

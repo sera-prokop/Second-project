@@ -1,5 +1,5 @@
 .breadcrumbs{
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   &__list{
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@
     vertical-align: middle;
     &:after{
       content: ">";
-      padding-left:5px;
+      padding-left:2px;
     }
     &:last-child:after{
       content: "";
@@ -21,8 +21,16 @@
     line-height: 1.4;
     font-family: "open_sansregular";
     color: #303030;
+    text-decoration: none;
+    &:hover{
+      border-bottom: 1px solid #303030;
+    }
     &--active{
       color: #FF6702;
+      border-bottom: 1px solid #FF6702;
+      &:hover{
+        border-bottom: 1px solid #FF6702;
+      }
     }
   }
 }

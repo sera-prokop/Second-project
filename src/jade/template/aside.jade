@@ -20,7 +20,10 @@ aside.aside
             ['В ближайшем ко мне магазине', 'my-shop']
           ]
         each item in shopItem
-          .shop__radio(class="#{item[1]}")= item[0]
+          if item[1]==='all-shop'
+            .shop__radio.shop__radio--active(class="#{item[1]}")= item[0]
+          else
+            .shop__radio(class="#{item[1]}")= item[0]
         input.shop__input(type="hidden")
 
 
@@ -38,7 +41,7 @@ aside.aside
             ['Motorola', 'motorola']
           ]
         each item in brendsItem
-          .brends__check=item[0]
+          div(class="brends__check--#{item[1]}").brends__check=item[0]
             input.brends__input.hidden(type="checkbox" id="#{item[1]}")
         a(href="#").brends__link Сбросить фильтр
 
@@ -51,7 +54,7 @@ aside.aside
           span.cost__span от
           input#amount.cost__input(type="text")
           span.cost__span до
-          input#amount2.cost__input(type="text")
+          input#amount2.cost__input.cost__input--last(type="text")
           #slider.ui-slider.ui-slider-horizontal.ui-widget
             .ui-slider-range
             span.ui-slider-handle
