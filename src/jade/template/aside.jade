@@ -99,7 +99,7 @@ aside.aside
             ['Custom', 'custom']
           ]
         each item in osItem
-          .os__check=item[0]
+          div(class="os__check--#{item[1]}").os__check=item[0]
             input.os__input.hidden(type="checkbox" id="#{item[1]}")
         a(href="#").os__link Сбросить фильтр
 

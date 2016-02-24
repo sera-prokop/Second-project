@@ -6,11 +6,13 @@
     display: block;
     min-width: 100%;
     position: absolute;
-    bottom: 35px;
+    bottom: 30px;
     border-bottom: 1px solid #474747;
   }
 }
-
+.footer-top{
+  margin-bottom: -7px;
+}
 .footer-top-logo{
   float: left;
   width: 240px;
@@ -31,7 +33,7 @@
   &__item{
     display: inline-block;
     vertical-align: middle;
-    margin-left: 24px;
+    margin-left: 26px;
     &:first-child{
       margin-left: 0;
     }
@@ -96,6 +98,6 @@
   color: #fff;
   text-align: center;
   font-family: "open_sansregular", serif;
-  font-size: 14px;
-  line-height: 2.571;
+  font-size: 12px;
+  line-height: 30px;
 }

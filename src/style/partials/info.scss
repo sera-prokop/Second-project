@@ -1,11 +1,21 @@
 .information{
-  margin-bottom: 30px;
+  margin-bottom: 8px;
+  &__title{
+    font-size: 20px;
+    line-height: 1;
+    font-family: "open_sansbold", sans-serif;
+    margin-bottom: 6px;
+  }
   &__p{
     font-family: "open_sansregular", sans-serif;
     font-size: 14px;
     line-height: 1.43;
     text-align: justify;
   }
+}
+.info{
+  text-indent: 37px;
+  margin-bottom: 20px;
 }
 .column{
   width: 48%!important;
