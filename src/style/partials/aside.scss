@@ -57,9 +57,7 @@
   font-size: 16px;
   margin-top: 0;
 }
-.aside-form-title2{
-  margin-bottom: 0;
-}
+
 
 //--------------- Radiobutton ----------------
 
@@ -198,7 +196,6 @@
 
 .cost{
   padding: 14px 26px 16px 26px;
-  margin-bottom: 15px;
   &__title{
     margin-bottom: 11px;
   }
@@ -249,10 +246,7 @@
 //----------- Color -----------
 
 .color{
-  padding: 14px 26px 0 26px;
-  &__title{
-    margin-bottom: 13px;
-  }
+  padding: 14px 26px 22px 26px;
   &:hover .arrow{
     @include sprite($arrow-t)
     display: block;
@@ -283,7 +277,7 @@
     height: 35px;
     border: 1px solid #dee2e5;
     display: block;
-    margin: 0 23px 22px 0;
+    margin: 22px 23px 0 0;
     &--white{
       background: #fff;
   }
@@ -324,4 +318,8 @@
       outline: 2px solid #ff6600;
     }
   }
+}
+
+.aside-form-title2{
+  margin-bottom: 0;
 }
