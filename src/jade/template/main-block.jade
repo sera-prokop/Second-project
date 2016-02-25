@@ -15,9 +15,9 @@
       ul.view__list
         each item in view
           if item==='norm'
-            li.view__item.view__item--active
+            li.view__item
               a.view__link(href="#" data-class="view-switch--#{item}")
-                span(class="view--#{item}")
+                span.view--active(class="view--#{item}")
           else
             li.view__item
               a.view__link(href="#" data-class="view-switch--#{item}")
@@ -120,9 +120,13 @@
             .block-center__rating.rating
               ul.rating__list
                 - for(var r = 0; r < 5; r++)
-                  li.rating__item
+                  if(r < 4)
+                    li.rating__item.rating__item--active
+                  else
+                    li.rating__item
               .rating__val 4
           .product__block-right.block-right.clearfix
             .block-right__price #{rightPrice[i]}
-            button.block-right__recycler В корзину
-            .block-right__avial В наличии
+            .block-right__wrapper
+              button.block-right__recycler В корзину
+              .block-right__avial В наличии

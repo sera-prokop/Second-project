@@ -50,31 +50,38 @@
     position: relative;
     padding: 19px 17px 19px 18px;
     &:hover{
-      opacity: 0.5;
+      opacity: 0.2;
     }
   }
   &--min{
     @include sprite($min);
     display: inline-block;
+    opacity: 0.4;
   }
   &--middle{
     @include sprite($middle);
     display: inline-block;
     margin: 0 auto;
     vertical-align: middle;
+    opacity: 0.4;
   }
   &--norm{
     @include sprite($norm);
     display: inline-block;
     margin: 0 auto;
     vertical-align: middle;
+    opacity: 0.4;
   }
+  &--active{
+      opacity: 1;
+    }
 }
 
 // -------------- Основной блок ------------------
 
 .view-switch--norm{
   .product{
+    position: relative;
     background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid #dee2e5;
     border-radius: 5px;
@@ -83,6 +90,16 @@
     box-sizing: border-box;
     &:hover{
       box-shadow: 0 1px 5.7px 0.3px rgba(119, 119, 119, 0.75);
+    }
+    &:after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1px;
+      background: #dee1e4;
+      height: 95%;
+      top: 3%;
+      right: 152px;
     }
     &__list{
       margin: 0;
@@ -189,7 +206,6 @@
   }
 
   .block-right{
-    border-left: 1px solid #dee1e4;
     padding-left: 24px;
     &__price{
       font-family: "open_sanssemibold", sans-serif;
@@ -206,8 +222,11 @@
     &__price{
       font-size: 20px;
       line-height: 1.2;
-      margin-bottom: 125px;
       text-align: right;
+    }
+    &__wrapper{
+      position: absolute;
+      bottom: 14px;
     }
     &__recycler{
       padding: 7px 15px;
@@ -251,9 +270,9 @@
   &__item{
     display: inline-block;
     vertical-align: bottom;
-    @include sprite($star-h);
-    &:last-child{
-      @include sprite($star);
+    @include sprite($star);
+    &--active{
+      @include sprite($star-h);
     }
   }
   &__val{
@@ -343,9 +362,13 @@
       line-height: 1.2;
       margin: 0;
     }
+    &__wrapper{
+      position: static;
+    }
     &__recycler{
       float: right;
       line-height: 1.2;
+      position: static;
     }
     &__avial{
       float: left;
@@ -443,6 +466,9 @@
     width: auto;
     border: none;
     padding-left: 0;
+    &__wrapper{
+      position: static;
+    }
     &__price{
       text-align: center;
       margin-bottom: 3px;
@@ -451,7 +477,6 @@
       display: inline-block;
       float: right;
       margin-bottom: 0;
-
     }
     &__avial{
       display: inline-block;

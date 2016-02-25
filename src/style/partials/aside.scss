@@ -58,6 +58,10 @@
   margin-top: 0;
 }
 
+.aside-wrapper-click{
+  text-decoration: none;
+  color: #000;
+}
 
 //--------------- Radiobutton ----------------
 
@@ -246,7 +250,10 @@
 //----------- Color -----------
 
 .color{
-  padding: 14px 26px 22px 26px;
+  padding:13px 57px 19px 27px;
+  &__title{
+    margin-bottom: -8px;
+  }
   &:hover .arrow{
     @include sprite($arrow-t)
     display: block;

@@ -85,8 +85,8 @@ $(document).ready(function(){
     var swTab = $(this).attr('data-class');
     $('#tab').removeClass().addClass(swTab);
 
-    $(this).closest('.view__item').addClass('view__item--active');
-    $(this).closest('.view__item').siblings().removeClass('view__item--active');
+    $('.view__link').find('span').removeClass('view--active');
+    $(this).find('span').addClass('view--active');
 
   });
 });
@@ -112,10 +112,11 @@ $( "#amount2" ).val($( "#slider" ).slider( "values", 1 ) );
 
 
 $(document).ready(function(){
-  $('.arrow').on('click', function(e){
+  $('.aside-wrapper-click').on('click', function(e){
+    e.preventDefault();
     $(this).siblings('.aside-wrapper').slideToggle().stop(true, true);
-    $(this).toggleClass('arrow2');
-    $(this).siblings('.aside-form-title').toggleClass('aside-form-title2');
+    $(this).find('.arrow').toggleClass('arrow2');
+    $(this).find('.aside-form-title').toggleClass('aside-form-title2');
 
   });
 });
