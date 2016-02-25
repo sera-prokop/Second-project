@@ -10,20 +10,58 @@
     border-bottom: 1px solid #474747;
   }
 }
-.footer-top{
-  margin-bottom: -7px;
-}
-.footer-top-logo{
+
+.footer-left{
   float: left;
   width: 240px;
-  padding-top: 70px;
-  overflow: hidden;
+  &__logo{
+    padding-top: 70px;
+  }
 }
 
-.social-f{
+
+
+.footer-right{
   float: right;
-  width: 185px;
+  width: 530px;
+  text-align: right;
+}
+
+.footer-menu{
+  text-align: right;
+
+  margin-bottom: 22px;
+  &__list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  &__item{
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 21px;
+    &--tech, &--mp3{
+      padding-right: 0;
+    }
+    &:first-child{
+      text-indent: 140px;
+    }
+  }
+  &__link{
+    font-family: "open_sansregular", serif;
+    font-size: 14px;
+    line-height: 2.571;
+    color: #fff;
+    &:hover{
+      opacity: .4;
+    }
+  }
+}
+
+
+.social-f{
   padding-top: 35px;
+  padding-bottom: 20px;
   &__list{
     margin: 0;
     padding: 0;
@@ -33,7 +71,7 @@
   &__item{
     display: inline-block;
     vertical-align: middle;
-    margin-left: 26px;
+    margin-left: 31px;
     &:first-child{
       margin-left: 0;
     }
@@ -62,38 +100,6 @@
   }
 }
 
-.footer-top-menu{
-  margin-left: 565px;
-  margin-bottom: 22px;
-  &__list{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 0;
-  }
-  &__item{
-    display: inline-block;
-    vertical-align: middle;
-    &:first-child{
-      padding-left: 168px;
-    }
-
-  }
-  &__link{
-    font-family: "open_sansregular", serif;
-    font-size: 14px;
-    line-height: 2.571;
-    color: #fff;
-    padding-right: 27px;
-    &--tech, &--mp3{
-      padding-right: 0;
-    }
-    &:hover{
-      opacity: .4;
-    }
-  }
-}
-
 .footer-bottom{
   color: #fff;
   text-align: center;
@@ -101,3 +107,75 @@
   font-size: 12px;
   line-height: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .footer-top{
+//   margin-bottom: -7px;
+// }
+// .footer-top-logo{
+//   float: left;
+//   width: 240px;
+//   padding-top: 70px;
+//   overflow: hidden;
+// }
+
+
+
+
+// .footer-top-menu{
+//   margin-left: 565px;
+//   margin-bottom: 22px;
+//   &__list{
+//     margin: 0;
+//     padding: 0;
+//     list-style-type: none;
+//     font-size: 0;
+//   }
+//   &__item{
+//     display: inline-block;
+//     vertical-align: middle;
+//     &:first-child{
+//       padding-left: 168px;
+//     }
+
+//   }
+//   &__link{
+//     font-family: "open_sansregular", serif;
+//     font-size: 14px;
+//     line-height: 2.571;
+//     color: #fff;
+//     padding-right: 27px;
+//     &--tech, &--mp3{
+//       padding-right: 0;
+//     }
+//     &:hover{
+//       opacity: .4;
+//     }
+//   }
+// }

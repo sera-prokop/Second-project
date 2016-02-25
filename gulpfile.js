@@ -85,7 +85,8 @@ gulp.task('html:build', function () {
   var YOUR_LOCALS = {};
   gulp.src(path.src.jade)
     .pipe(jade({
-      locals: YOUR_LOCALS
+      locals: YOUR_LOCALS,
+      pretty: true
     }))
     .pipe(gulp.dest(path.build.html))
     .pipe(reload({stream: true}));
@@ -137,7 +138,6 @@ gulp.task('md_test:build', function () {
 
 gulp.task('style:build', function () {
   gulp.src(path.src.style)
-    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
         includePaths: ['src/style/'],
@@ -150,7 +150,7 @@ gulp.task('style:build', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(cssnano())
+    // .pipe(cssnano())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(reload({stream: true}));
