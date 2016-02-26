@@ -43,7 +43,7 @@
 }
 
 .aside-form-block{
-  padding: 12px 57px 18px 57px;
+
   border-top: 1px solid #dee1e4;
   position: relative;
 
@@ -52,15 +52,23 @@
   }
 }
 
+.aside-wrapper{
+  padding: 5px 25px 18px 57px;
+}
+
 .aside-form-title{
   font-family: "open_sanssemibold", sans-serif;
   font-size: 16px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .aside-wrapper-click{
   text-decoration: none;
   color: #000;
+  display: block;
+  padding: 11px 0;
+  margin-bottom: 0;
 }
 
 //--------------- Radiobutton ----------------
@@ -83,7 +91,7 @@
     cursor: pointer;
   }
   &__title{
-    margin-left: -30px;
+    padding-left: 27px;
   }
   &__radio{
     position: relative;
@@ -116,7 +124,7 @@
 
 .brends, .os{
   &__title{
-    margin-left: -30px;
+    padding-left: 27px;
   }
   &__check{
     position: relative;
@@ -146,7 +154,6 @@
 }
 
 .brends__link, .os__link{
-  margin-left: -30px;
   font-family: "open_sansregular", sans-serif;
   color: #00b3ff;
   font-size: 14px;
@@ -199,9 +206,11 @@
 //--------- Cost ------------
 
 .cost{
-  padding: 14px 26px 16px 26px;
+  // padding: 14px 26px 16px 26px;
   &__title{
-    margin-bottom: 11px;
+    // margin-bottom: 11px;
+
+    padding-left: 27px;
   }
   &:hover .arrow{
     @include sprite($arrow-t)
@@ -218,6 +227,9 @@
     right: 10px;
     top: 20px;
     cursor: pointer;
+  }
+  &__wr{
+    padding: 0 26px 16px 27px
   }
   &__span{
     font-family: "open_sansregular", sans-serif;
@@ -250,9 +262,11 @@
 //----------- Color -----------
 
 .color{
-  padding:13px 57px 19px 27px;
+  // padding:13px 57px 19px 27px;
   &__title{
-    margin-bottom: -8px;
+    // margin-bottom: -8px;
+
+    padding-left: 27px;
   }
   &:hover .arrow{
     @include sprite($arrow-t)
@@ -270,6 +284,9 @@
     top: 20px;
     cursor: pointer;
   }
+  &__wr{
+    padding:3px 57px 0 27px;
+  }
   &__list{
     margin: 0;
     padding: 0;
@@ -278,13 +295,13 @@
   }
   &__item{
     display: inline-block;
+    margin: 0 22px 22px 0;
   }
   &__link{
     width: 35px;
     height: 35px;
     border: 1px solid #dee2e5;
     display: block;
-    margin: 22px 23px 0 0;
     &--white{
       background: #fff;
   }

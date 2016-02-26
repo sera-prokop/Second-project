@@ -151,7 +151,7 @@
       text-align: center;
       border: 1px solid #dee2e5;
       box-sizing: border-box;
-        overflow: hidden;
+      overflow: hidden;
 
       &:first-child{
         margin-left: 0;
@@ -161,7 +161,7 @@
         margin-top: 3px;
         background-size: contain;
         width: 25px;
-        height: 28px;
+        max-height: 28px;
       }
       &:hover{
         border: 1px solid #ff6600;
