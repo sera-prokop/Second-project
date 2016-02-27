@@ -119,11 +119,12 @@
   margin-bottom: 0;
 }
 // ----------- Checkbox ---------------
-
 .brends, .os{
   &__title{
     padding-left: 27px;
   }
+}
+.aside-wrapper{
   &__check{
     position: relative;
     font-family: "open_sansregular", sans-serif;

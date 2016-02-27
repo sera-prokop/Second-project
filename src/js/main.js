@@ -11,4 +11,12 @@
     Custom
  */
 
+//= partials/radiobutton.js
+//= partials/checkbox.js
+//= partials/select.js
+//= partials/columnizer.js
+//= partials/tab.js
+//= partials/slider.js
+//= partials/akkordeon.js
+//= partials/images.js
 //= partials/helper.js

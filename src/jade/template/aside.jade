@@ -43,9 +43,9 @@ aside.aside
             ['Motorola', 'motorola']
           ]
         each item in brendsItem
-          div(class="brends__check--#{item[1]}").brends__check=item[0]
-            input.brends__input.hidden(type="checkbox" id="#{item[1]}")
-        a(href="#").brends__link Сбросить фильтр
+          div(class="aside-wrapper__check--#{item[1]}").aside-wrapper__check=item[0]
+            input.aside-wrapper__input.hidden(type="checkbox" id="#{item[1]}")
+        a(href="#").brends__link.aside-wrapper__link Сбросить фильтр
 
 
     .cost.aside-form-block
@@ -104,8 +104,8 @@ aside.aside
             ['Custom', 'custom']
           ]
         each item in osItem
-          div(class="os__check--#{item[1]}").os__check=item[0]
-            input.os__input.hidden(type="checkbox" id="#{item[1]}")
-        a(href="#").os__link Сбросить фильтр
+          div(class="aside-wrapper__check--#{item[1]}").aside-wrapper__check=item[0]
+            input.aside-wrapper__input.hidden(type="checkbox" id="#{item[1]}")
+        a(href="#").os__link.aside-wrapper__link Сбросить фильтр
 
 
