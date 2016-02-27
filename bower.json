@@ -19,6 +19,8 @@
     "jquery": "1.12.0",
     "normalize.css": "*",
     "modernizr": "2.8.*",
-    "jquery.columnizer": "^1.6.2"
+    "jquery.columnizer": "^1.6.2",
+    "jquery-ui": "^1.11.4",
+    "jquery-form-styler": "jquery.form-styler#^1.7.4"
   }
 }
